@@ -17,6 +17,11 @@ module.exports = {
                         limit: 20480
                     }
                 }]
+            },{
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                use: [{
+                    loader: 'file-loader'
+                }]
             },
             {
                 test: /\.(scss|css)$/,
