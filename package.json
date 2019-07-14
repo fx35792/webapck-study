@@ -1,0 +1,19 @@
+{
+  "name": "webpackdemo2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
+  },
+  "devDependencies": {
+    "file-loader": "^4.0.0"
+  }
+}
