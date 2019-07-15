@@ -9,6 +9,7 @@ module.exports = {
     entry: {
         main: "./src/index.js"
     },
+    devtool:'cheap-module-eval-source-map',//development:'cheap-module-eval-source-map' production:'cheap-module-source-map'
     module: {
         rules: [{
                 test: /\.(png|jeg|gif)$/,

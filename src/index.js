@@ -9,3 +9,4 @@ new Slider();
 new Content();
 new GetImg();
 new GetIconFont();
+// consele.log(1111);//验证 source-map
