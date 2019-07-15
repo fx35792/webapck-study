@@ -1,4 +1,7 @@
-var path = require('path');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
 
 module.exports = {
     mode: 'development', //development
@@ -17,7 +20,7 @@ module.exports = {
                         limit: 20480
                     }
                 }]
-            },{
+            }, {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
                 use: [{
                     loader: 'file-loader'
@@ -28,9 +31,9 @@ module.exports = {
                 use: [
                     'style-loader',
                     {
-                        loader:'css-loader',
-                        options:{
-                            importLoaders:2
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 2
                         }
                     },
                     {
@@ -43,8 +46,14 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: 'src/index.html'
+        })
+    ],
     output: {
-        filename: 'build.js',
-        path: path.resolve(__dirname, 'build')
+        filename: 'dist.js',
+        path: path.resolve(__dirname, 'dist')
     }
 }
