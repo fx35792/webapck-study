@@ -10,6 +10,12 @@ module.exports = {
         main: "./src/index.js"
     },
     devtool:'cheap-module-eval-source-map',//development:'cheap-module-eval-source-map' production:'cheap-module-source-map'
+    devServer: {
+        contentBase: './dist',
+        compress: true,
+        port: 8081,
+        open: true
+    },
     module: {
         rules: [{
                 test: /\.(png|jeg|gif)$/,
@@ -54,6 +60,7 @@ module.exports = {
         })
     ],
     output: {
+        publicPath: '/',
         filename: 'dist.js',
         path: path.resolve(__dirname, 'dist')
     }
