@@ -1,0 +1,13 @@
+function ButtonClick(){
+	var btn = document.createElement('button');
+	btn.innerHTML = '新增';
+	document.body.appendChild(btn);
+
+	btn.onclick = function(){
+		var div = document.createElement('div');
+		div.classList.add('item');
+		div.innerHTML = 'add item';
+		document.body.appendChild(div);
+	}
+}
+export default ButtonClick;

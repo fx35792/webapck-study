@@ -39,7 +39,10 @@
 body {
     div {
         font-size: 30px;
-        text-shadow: 5px 5px 5px #FF0000;
+        text-shadow: 5px 5px 5px blue;
+    }
+    .item:nth-child(odd){
+        background: blue
     }
 
 }
