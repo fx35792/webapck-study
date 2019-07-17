@@ -1,22 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const webpack = require('webpack');
 
 module.exports = {
-    mode: 'development', //development
-    // entry: "./src/index.js",
     entry: {
         main: "./src/index.js"
-    },
-    devtool: 'cheap-module-eval-source-map', //development:'cheap-module-eval-source-map' production:'cheap-module-source-map'
-    devServer: {
-        contentBase: './dist',
-        compress: true,
-        port: 8081,
-        open: true,
-        hot: true, //hrm 需要配置的
-        hotOnly: true //hrm 需要配置的
     },
     module: {
         rules: [{
@@ -89,18 +77,16 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin({
+            cleanStaleWebpackAssets: true
+        }),
         new HtmlWebpackPlugin({
             template: 'src/index.html'
-        }),
-        new webpack.HotModuleReplacementPlugin() //hrm 需要配置的
+        })
     ],
-    optimization: {
-        usedExports: true
-    },
     output: {
         // publicPath: '/',
-        filename: 'dist.js',
-        path: path.resolve(__dirname, 'dist')
+        filename: '[name][hash].js',
+        path: path.resolve(__dirname, '../dist')
     }
 }
