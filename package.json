@@ -7,6 +7,7 @@
   "scripts": {
     "start": "webpack-dev-server --config ./build/webpack.dev.js",
     "watch": "webpack --watch",
+    "dev-build": "webpack --config ./build/webpack.dev.js",
     "build": "webpack --config ./build/webpack.prod.js",
     "server": "node server.js",
     "clean": "rimraf dist/"
@@ -15,9 +16,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/polyfill": "^7.4.4",
     "@babel/runtime": "^7.5.4",
     "@babel/runtime-corejs2": "^7.5.4",
+    "lodash": "^4.17.14",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5"
   },

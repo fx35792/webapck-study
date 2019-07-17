@@ -84,6 +84,11 @@ module.exports = {
             template: 'src/index.html'
         })
     ],
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
     output: {
         // publicPath: '/',
         filename: '[name][hash].js',
