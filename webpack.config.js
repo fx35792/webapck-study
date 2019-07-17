@@ -95,8 +95,11 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin() //hrm 需要配置的
     ],
+    optimization: {
+        usedExports: true
+    },
     output: {
-        publicPath: '/',
+        // publicPath: '/',
         filename: 'dist.js',
         path: path.resolve(__dirname, 'dist')
     }
