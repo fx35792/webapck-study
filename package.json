@@ -9,6 +9,7 @@
     "watch": "webpack --watch",
     "dev-build": "webpack --config ./build/webpack.dev.js",
     "build": "webpack --config ./build/webpack.prod.js",
+    "analyse": "webpack --profile --json > stats.json --config ./build/webpack.dev.js",
     "server": "node server.js",
     "clean": "rimraf dist/"
   },
@@ -42,6 +43,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "url-loader": "^2.0.1",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-dev-middleware": "^3.7.0",
     "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.2.1"

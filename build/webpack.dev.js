@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const merge = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
 
@@ -14,7 +15,8 @@ const devConfig = {
         // hotOnly: true //hrm 需要配置的
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin() //hrm 需要配置的
+        new webpack.HotModuleReplacementPlugin(), //hrm 需要配置的
+        // new BundleAnalyzerPlugin()
     ],
     optimization: {
         usedExports: true
