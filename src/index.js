@@ -1,7 +1,7 @@
-import './style.css'
-import './style1.css'
 import $ from 'jquery';
 import _ from 'lodash';
+import {ui} from './jquery.ui.js'
+ui();
 
 const element = $("div");
 element.html(_.join(['hello', 'world'], '--'));
