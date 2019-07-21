@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const merge = require('webpack-merge');
-const commonConfig = require('./webpack.common.js');
+// const merge = require('webpack-merge');
+// const commonConfig = require('./webpack.common.js');
 
 const devConfig = {
     mode: 'development', //development
@@ -20,4 +20,5 @@ const devConfig = {
     ],
 }
 
-module.exports = merge(commonConfig, devConfig)
+// module.exports = merge(commonConfig, devConfig)
+module.exports = devConfig
