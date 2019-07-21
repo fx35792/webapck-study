@@ -86,12 +86,16 @@ module.exports = {
     ],
     optimization: {
         splitChunks: {
-            chunks: 'all'
+            chunks: 'all',
+            cacheGroups: {
+                vendors: false,
+                default: false
+            }
         }
     },
     output: {
         // publicPath: '/',
-        filename: '[name][hash].js',
+        filename: '[name].js',
         path: path.resolve(__dirname, '../dist')
     }
 }
