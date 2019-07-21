@@ -18,9 +18,6 @@ const devConfig = {
         new webpack.HotModuleReplacementPlugin(), //hrm 需要配置的
         // new BundleAnalyzerPlugin()
     ],
-    optimization: {
-        usedExports: true
-    }
 }
 
 module.exports = merge(commonConfig, devConfig)

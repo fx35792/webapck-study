@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'); 
 
 module.exports = {
     entry: {
@@ -59,7 +60,8 @@ module.exports = {
             {
                 test: /\.(scss|css)$/,
                 use: [
-                    'style-loader',
+                    // 'style-loader',
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -82,20 +84,34 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: 'src/index.html'
+        }),
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[name].css',
+            ignoreOrder: false, // Enable 
         })
     ],
+    performance: false,
     optimization: {
+        runtimeChunk: {
+            name:'runtime'
+        },
+        usedExports: true,
         splitChunks: {
             chunks: 'all',
             cacheGroups: {
-                vendors: false,
-                default: false
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    priority: -10,
+                    name: 'vendors'
+                }
             }
         }
     },
     output: {
         // publicPath: '/',
-        filename: '[name].js',
+        filename: '[name][contenthash].js',
+        chunkFilename: '[name][contenthash].js',
         path: path.resolve(__dirname, '../dist')
     }
 }
